@@ -11,34 +11,66 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Blockers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Blockers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJV-60-uE3">
-                                <rect key="frame" x="188.5" y="438" width="37" height="20.5"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <color key="textColor" systemColor="systemPinkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ji0-9g-9c1">
+                                <rect key="frame" x="20" y="59" width="374" height="506"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohf-tE-h5A">
+                                <rect key="frame" x="20" y="460" width="374" height="324"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="xJV-60-uE3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y0c-PF-epq"/>
-                            <constraint firstItem="xJV-60-uE3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mUv-Ar-9am"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.34395867586135864" green="0.17365267756873398" blue="0.20755850450405108" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="LogoImage" destination="ji0-9g-9c1" id="hCX-nM-TMc"/>
+                        <outlet property="titleImage" destination="ohf-tE-h5A" id="guv-1s-H8H"/>
+                        <segue destination="iGh-Pe-R4t" kind="show" identifier="start" id="HrM-Wg-6tm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
+            <point key="canvasLocation" x="17" y="-42"/>
+        </scene>
+        <!--Home View-->
+        <scene sceneID="itT-ZC-5Zd">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="iGh-Pe-R4t" customClass="HomeView" customModule="Blockers" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ovg-s8-I0p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bG-Z9-dow">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="mvV-ul-J1b"/>
+                                    <tabBarItem title="Item" id="NiF-En-vQV"/>
+                                    <tabBarItem title="Item" id="HIv-7I-mqn"/>
+                                    <tabBarItem title="Item" id="Zho-Oy-NQv"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w5f-0O-J4v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uvN-nK-kLz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2K5-yO-vml" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="-42"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
