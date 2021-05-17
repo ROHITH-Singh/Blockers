@@ -9,12 +9,12 @@ import Foundation
 
 
 
-struct MyPost: Codable{
-      
-    var post_id: String!
-    var post: String!
+struct MyAnswer: Codable{
+    
     var user_id: String!
-    var date: String!
-    var type:String!
+    var comment: String!
+    var post: String!
+   
+    
 
 }

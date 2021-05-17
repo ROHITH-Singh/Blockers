@@ -87,6 +87,7 @@ class HomeView: UIViewController , UITabBarDelegate, UITableViewDataSource, UITa
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
@@ -183,7 +184,7 @@ class HomeView: UIViewController , UITabBarDelegate, UITableViewDataSource, UITa
         cell.imageView?.clipsToBounds = true
         cell.imageView?.layer.cornerRadius = 20
         
-        cell.detailTextLabel?.text = "PostedBy UserId:\(postsData?[indexPath.row].user_id)"
+        cell.detailTextLabel?.text = "PostedBy UserId:\(postsData?[indexPath.row].user_id ?? "")"
                cell.detailTextLabel?.numberOfLines = 0
 
         return cell

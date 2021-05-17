@@ -82,6 +82,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmx-kG-k5L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.34395867590000001" green="0.1736526776" blue="0.20755850449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -260,6 +261,9 @@
                                         <state key="normal" title="Answer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="PostAnswerSegue:" destination="vkF-UI-RU6" eventType="touchUpInside" id="Gql-4Z-u6E"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXV-TY-snf">
                                         <rect key="frame" x="202" y="0.0" width="172" height="32"/>
@@ -271,6 +275,39 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZh-RS-N0S">
+                                <rect key="frame" x="10" y="206" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="0.34395867590000001" green="0.1736526776" blue="0.20755850449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="opc-EY-eeY">
+                                <rect key="frame" x="0.0" y="226.5" width="414" height="532.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ugd-ht-g2k">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ugd-ht-g2k" id="Dv3-ay-q76">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="cell.layer.borderColor ">
+                                                    <color key="value" systemColor="systemGray4Color"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="cell.layer.borderColor ">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vqe-2z-BbM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -278,32 +315,61 @@
                             <constraint firstItem="WqE-IB-WWa" firstAttribute="top" secondItem="5Lp-cI-man" secondAttribute="bottom" constant="15" id="1L2-Tf-e0H"/>
                             <constraint firstItem="vqe-2z-BbM" firstAttribute="trailing" secondItem="WqE-IB-WWa" secondAttribute="trailing" constant="20" id="62o-ri-Uld"/>
                             <constraint firstItem="VJg-dN-lMK" firstAttribute="top" secondItem="WqE-IB-WWa" secondAttribute="bottom" constant="20" id="8E6-fx-bUc"/>
+                            <constraint firstItem="vqe-2z-BbM" firstAttribute="trailing" secondItem="xZh-RS-N0S" secondAttribute="trailing" constant="10" id="Aol-hw-tsS"/>
                             <constraint firstItem="WqE-IB-WWa" firstAttribute="leading" secondItem="vqe-2z-BbM" secondAttribute="leading" constant="20" id="HRH-pO-Cqu"/>
+                            <constraint firstItem="opc-EY-eeY" firstAttribute="leading" secondItem="vqe-2z-BbM" secondAttribute="leading" id="Kue-DX-dAS"/>
+                            <constraint firstItem="vqe-2z-BbM" firstAttribute="trailing" secondItem="opc-EY-eeY" secondAttribute="trailing" id="SiS-fM-yNw"/>
                             <constraint firstItem="5Lp-cI-man" firstAttribute="top" secondItem="vqe-2z-BbM" secondAttribute="top" constant="9" id="Uz5-IB-VXS"/>
+                            <constraint firstItem="xZh-RS-N0S" firstAttribute="leading" secondItem="vqe-2z-BbM" secondAttribute="leading" constant="10" id="ap5-LT-FgR"/>
                             <constraint firstItem="VJg-dN-lMK" firstAttribute="leading" secondItem="vqe-2z-BbM" secondAttribute="leading" constant="20" id="ckg-M0-9OA"/>
                             <constraint firstItem="vqe-2z-BbM" firstAttribute="trailing" secondItem="VJg-dN-lMK" secondAttribute="trailing" constant="20" id="epF-Xc-1sy"/>
+                            <constraint firstItem="opc-EY-eeY" firstAttribute="top" secondItem="xZh-RS-N0S" secondAttribute="bottom" id="fiL-gQ-ZQs"/>
+                            <constraint firstItem="vqe-2z-BbM" firstAttribute="bottom" secondItem="opc-EY-eeY" secondAttribute="bottom" id="oWx-FV-8il"/>
                             <constraint firstItem="vqe-2z-BbM" firstAttribute="trailing" secondItem="5Lp-cI-man" secondAttribute="trailing" constant="10" id="uQe-DM-szA"/>
                             <constraint firstItem="5Lp-cI-man" firstAttribute="leading" secondItem="vqe-2z-BbM" secondAttribute="leading" constant="25" id="vBz-EX-M2f"/>
+                            <constraint firstItem="xZh-RS-N0S" firstAttribute="top" secondItem="VJg-dN-lMK" secondAttribute="bottom" constant="10" id="wJB-OJ-65a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jx1-az-c63"/>
                     <connections>
                         <outlet property="AnswerButton" destination="Vgh-Sx-jn2" id="YwJ-TK-5GI"/>
+                        <outlet property="AnswerList" destination="xZh-RS-N0S" id="fLN-MZ-n3O"/>
                         <outlet property="ProfileLogo" destination="KYt-Xe-JEW" id="ZSd-Tv-o7R"/>
                         <outlet property="QuestionLabel" destination="WqE-IB-WWa" id="k7P-Io-6rX"/>
                         <outlet property="ShareButton" destination="NXV-TY-snf" id="4Ji-7S-7mX"/>
+                        <outlet property="tableView" destination="opc-EY-eeY" id="V0u-Tn-fQ0"/>
                         <outlet property="userId" destination="Czs-wN-C0y" id="bw5-wh-pbC"/>
+                        <segue destination="XX3-DB-AKY" kind="show" id="3Rm-Do-ThJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAU-iN-Y6A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1753.6231884057972" y="1548.8839285714284"/>
         </scene>
+        <!--Answer Post-->
+        <scene sceneID="6B8-f6-K5f">
+            <objects>
+                <viewController storyboardIdentifier="AnswerPost" id="XX3-DB-AKY" customClass="AnswerPost" customModule="Blockers" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mO2-XK-59Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3UB-wr-moY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9f4-kG-jcz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJL-ik-Rdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754" y="2259"/>
+        </scene>
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

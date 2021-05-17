@@ -15,6 +15,7 @@
 		F96167C02651B43D00E76045 /* ImgResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167BF2651B43D00E76045 /* ImgResize.swift */; };
 		F96167C62652C67C00E76045 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C52652C67C00E76045 /* AnswerViewController.swift */; };
 		F96167CA2652E9FD00E76045 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C92652E9FD00E76045 /* AnswerModel.swift */; };
+		F96167D12653201C00E76045 /* AnswerPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167D02653201C00E76045 /* AnswerPost.swift */; };
 		F9785D06265047BC00ECDD17 /* Uiview+autoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9785D05265047BC00ECDD17 /* Uiview+autoLayout.swift */; };
 		F9785D0A265064D000ECDD17 /* GetPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9785D09265064D000ECDD17 /* GetPostModel.swift */; };
 		F9D1CA7F264E5F3D00E01DEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */; };
@@ -33,6 +34,7 @@
 		F96167BF2651B43D00E76045 /* ImgResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgResize.swift; sourceTree = "<group>"; };
 		F96167C52652C67C00E76045 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		F96167C92652E9FD00E76045 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		F96167D02653201C00E76045 /* AnswerPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPost.swift; sourceTree = "<group>"; };
 		F9785D05265047BC00ECDD17 /* Uiview+autoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uiview+autoLayout.swift"; sourceTree = "<group>"; };
 		F9785D09265064D000ECDD17 /* GetPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostModel.swift; sourceTree = "<group>"; };
 		F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */,
 				F96167C52652C67C00E76045 /* AnswerViewController.swift */,
+				F96167D02653201C00E76045 /* AnswerPost.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				F9785D0A265064D000ECDD17 /* GetPostModel.swift in Sources */,
 				F96167CA2652E9FD00E76045 /* AnswerModel.swift in Sources */,
 				F911F5A92608FB3A0053B0E6 /* AppDelegate.swift in Sources */,
+				F96167D12653201C00E76045 /* AnswerPost.swift in Sources */,
 				F9F26D672650A58B000D5A17 /* MyCell.swift in Sources */,
 				F9785D06265047BC00ECDD17 /* Uiview+autoLayout.swift in Sources */,
 				F911F5AB2608FB3A0053B0E6 /* SceneDelegate.swift in Sources */,
