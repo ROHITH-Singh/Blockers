@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         LogoImage.image = UIImage(named: "logo2")
         titleImage.image = UIImage(named: "title")
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self , selector: #selector(segueMethod),userInfo: nil,repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self , selector: #selector(segueMethod),userInfo: nil,repeats: false)
 //        LogoImage.frame.size.height = 600
 //        LogoImage.frame.size.width = 300
 //
@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     @objc func segueMethod(){
         performSegue(withIdentifier: "start", sender: self)
     }
+//    for potraitmode
+    override func viewWillAppear(_ animated: Bool) {
+    AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+        }
   
 
 }

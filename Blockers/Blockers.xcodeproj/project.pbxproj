@@ -12,8 +12,14 @@
 		F911F5AD2608FB3A0053B0E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F911F5AC2608FB3A0053B0E6 /* ViewController.swift */; };
 		F911F5B02608FB3A0053B0E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F911F5AE2608FB3A0053B0E6 /* Main.storyboard */; };
 		F911F5B22608FB450053B0E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F911F5B12608FB450053B0E6 /* Assets.xcassets */; };
+		F96167C02651B43D00E76045 /* ImgResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167BF2651B43D00E76045 /* ImgResize.swift */; };
+		F96167C62652C67C00E76045 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C52652C67C00E76045 /* AnswerViewController.swift */; };
+		F96167CA2652E9FD00E76045 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C92652E9FD00E76045 /* AnswerModel.swift */; };
+		F9785D06265047BC00ECDD17 /* Uiview+autoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9785D05265047BC00ECDD17 /* Uiview+autoLayout.swift */; };
+		F9785D0A265064D000ECDD17 /* GetPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9785D09265064D000ECDD17 /* GetPostModel.swift */; };
 		F9D1CA7F264E5F3D00E01DEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */; };
-		F9D1CA80264E5F3D00E01DEC /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D1CA7E264E5F3D00E01DEC /* HomeView.xib */; };
+		F9F26D672650A58B000D5A17 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F26D652650A58B000D5A17 /* MyCell.swift */; };
+		F9F26D682650A58B000D5A17 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F26D662650A58B000D5A17 /* MyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +30,14 @@
 		F911F5AF2608FB3A0053B0E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F911F5B12608FB450053B0E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F911F5B62608FB450053B0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F96167BF2651B43D00E76045 /* ImgResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgResize.swift; sourceTree = "<group>"; };
+		F96167C52652C67C00E76045 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		F96167C92652E9FD00E76045 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		F9785D05265047BC00ECDD17 /* Uiview+autoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uiview+autoLayout.swift"; sourceTree = "<group>"; };
+		F9785D09265064D000ECDD17 /* GetPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostModel.swift; sourceTree = "<group>"; };
 		F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F9D1CA7E264E5F3D00E01DEC /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		F9F26D652650A58B000D5A17 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		F9F26D662650A58B000D5A17 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 		F911F5A72608FB3A0053B0E6 /* Blockers */ = {
 			isa = PBXGroup;
 			children = (
+				F9785D08265064AD00ECDD17 /* Model */,
 				F9D1CA6E264E5BDC00E01DEC /* VC */,
 				F911F5A82608FB3A0053B0E6 /* AppDelegate.swift */,
 				F911F5AA2608FB3A0053B0E6 /* SceneDelegate.swift */,
@@ -65,15 +78,28 @@
 				F911F5AE2608FB3A0053B0E6 /* Main.storyboard */,
 				F911F5B12608FB450053B0E6 /* Assets.xcassets */,
 				F911F5B62608FB450053B0E6 /* Info.plist */,
+				F9785D05265047BC00ECDD17 /* Uiview+autoLayout.swift */,
+				F9F26D652650A58B000D5A17 /* MyCell.swift */,
+				F9F26D662650A58B000D5A17 /* MyCell.xib */,
+				F96167BF2651B43D00E76045 /* ImgResize.swift */,
 			);
 			path = Blockers;
+			sourceTree = "<group>";
+		};
+		F9785D08265064AD00ECDD17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9785D09265064D000ECDD17 /* GetPostModel.swift */,
+				F96167C92652E9FD00E76045 /* AnswerModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F9D1CA6E264E5BDC00E01DEC /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */,
-				F9D1CA7E264E5F3D00E01DEC /* HomeView.xib */,
+				F96167C52652C67C00E76045 /* AnswerViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -136,8 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F911F5B22608FB450053B0E6 /* Assets.xcassets in Resources */,
+				F9F26D682650A58B000D5A17 /* MyCell.xib in Resources */,
 				F911F5B02608FB3A0053B0E6 /* Main.storyboard in Resources */,
-				F9D1CA80264E5F3D00E01DEC /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +175,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F911F5AD2608FB3A0053B0E6 /* ViewController.swift in Sources */,
+				F96167C02651B43D00E76045 /* ImgResize.swift in Sources */,
 				F9D1CA7F264E5F3D00E01DEC /* HomeView.swift in Sources */,
+				F96167C62652C67C00E76045 /* AnswerViewController.swift in Sources */,
+				F9785D0A265064D000ECDD17 /* GetPostModel.swift in Sources */,
+				F96167CA2652E9FD00E76045 /* AnswerModel.swift in Sources */,
 				F911F5A92608FB3A0053B0E6 /* AppDelegate.swift in Sources */,
+				F9F26D672650A58B000D5A17 /* MyCell.swift in Sources */,
+				F9785D06265047BC00ECDD17 /* Uiview+autoLayout.swift in Sources */,
 				F911F5AB2608FB3A0053B0E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
