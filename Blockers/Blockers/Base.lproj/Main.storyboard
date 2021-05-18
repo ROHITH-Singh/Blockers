@@ -272,6 +272,9 @@
                                         <state key="normal" title="Share">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareAction:" destination="vkF-UI-RU6" eventType="touchUpInside" id="bwk-kd-Xcg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -339,7 +342,7 @@
                         <outlet property="ShareButton" destination="NXV-TY-snf" id="4Ji-7S-7mX"/>
                         <outlet property="tableView" destination="opc-EY-eeY" id="V0u-Tn-fQ0"/>
                         <outlet property="userId" destination="Czs-wN-C0y" id="bw5-wh-pbC"/>
-                        <segue destination="XX3-DB-AKY" kind="show" id="3Rm-Do-ThJ"/>
+                        <segue destination="PSo-QJ-h9j" kind="show" id="Ppy-Hl-vq7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAU-iN-Y6A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -347,20 +350,113 @@
             <point key="canvasLocation" x="1753.6231884057972" y="1548.8839285714284"/>
         </scene>
         <!--Answer Post-->
-        <scene sceneID="6B8-f6-K5f">
+        <scene sceneID="BYg-Ku-nRz">
             <objects>
-                <viewController storyboardIdentifier="AnswerPost" id="XX3-DB-AKY" customClass="AnswerPost" customModule="Blockers" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mO2-XK-59Q">
+                <viewController storyboardIdentifier="AnswerPost" id="PSo-QJ-h9j" customClass="AnswerPost" customModule="Blockers" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mAL-eu-pQ5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="3UB-wr-moY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a6J-Ig-5Nc">
+                                <rect key="frame" x="16" y="56" width="382" height="303.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do today?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giF-FG-Npd">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="25.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="fQf-Bl-pmb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="245" text="Say something..." translatesAutoresizingMaskIntoConstraints="NO" id="gp4-dj-Wjc">
+                                        <rect key="frame" x="0.0" y="25.5" width="382" height="278"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="PSo-QJ-h9j" id="3ze-Xu-VQG"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1xS-LN-xKR">
+                                <rect key="frame" x="16" y="708" width="382" height="36"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bsF-gO-lbT">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phB-z8-y92">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="E4E-Ar-efJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancel:" destination="PSo-QJ-h9j" eventType="touchUpInside" id="WHq-X2-kmU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfW-3f-k1D">
+                                                <rect key="frame" x="78" y="0.0" width="304" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="done:" destination="PSo-QJ-h9j" eventType="touchUpInside" id="m6R-jR-oWb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g1K-fz-LCk"/>
+                        <color key="backgroundColor" red="0.34395867590000001" green="0.1736526776" blue="0.20755850449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a6J-Ig-5Nc" firstAttribute="top" secondItem="g1K-fz-LCk" secondAttribute="top" id="0m5-ki-jhl"/>
+                            <constraint firstItem="a6J-Ig-5Nc" firstAttribute="height" secondItem="mAL-eu-pQ5" secondAttribute="height" multiplier="0.4" id="3eu-iE-eeQ"/>
+                            <constraint firstItem="1xS-LN-xKR" firstAttribute="leading" secondItem="g1K-fz-LCk" secondAttribute="leading" constant="16" id="8d3-Ug-Bve"/>
+                            <constraint firstItem="g1K-fz-LCk" firstAttribute="trailing" secondItem="a6J-Ig-5Nc" secondAttribute="trailing" constant="16" id="LAi-vp-7bD"/>
+                            <constraint firstItem="a6J-Ig-5Nc" firstAttribute="leading" secondItem="g1K-fz-LCk" secondAttribute="leading" constant="16" id="SZo-sf-0Ua"/>
+                            <constraint firstAttribute="bottom" secondItem="1xS-LN-xKR" secondAttribute="bottom" constant="15" id="V14-p9-xNJ"/>
+                            <constraint firstItem="g1K-fz-LCk" firstAttribute="trailing" secondItem="1xS-LN-xKR" secondAttribute="trailing" constant="16" id="dHq-3c-uVP"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="9f4-kG-jcz"/>
+                    <navigationItem key="navigationItem" id="Ial-eE-b8A"/>
+                    <connections>
+                        <outlet property="AnswertextFeild" destination="gp4-dj-Wjc" id="ZXM-eN-wdQ"/>
+                        <outlet property="Cancel" destination="phB-z8-y92" id="L4A-1c-AVD"/>
+                        <outlet property="Done" destination="GfW-3f-k1D" id="VV9-Sw-x5f"/>
+                        <outlet property="QuestionLabel" destination="giF-FG-Npd" id="3nz-Kz-Bjw"/>
+                        <outlet property="bottomConstraint" destination="V14-p9-xNJ" id="ytk-4Z-qdk"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJL-ik-Rdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cf7-3l-p9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1754" y="2259"/>
+            <point key="canvasLocation" x="1899" y="2288"/>
         </scene>
     </scenes>
     <resources>
@@ -379,6 +475,9 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

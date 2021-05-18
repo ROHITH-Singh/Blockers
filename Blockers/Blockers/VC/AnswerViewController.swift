@@ -106,14 +106,74 @@ class AnswerViewController: UIViewController , UITabBarDelegate, UITableViewData
         
         
     }
+    
+    @objc private func presentSharesheet(){
+        guard  let image = UIImage(systemName: "bell"),let url = URL(string: "https://google.com") else {
+            return
+        }
+        let sharesheetVc = UIActivityViewController(activityItems: [image,url], applicationActivities: nil)
+    present(sharesheetVc, animated: true)
+}
 
+    
+    @IBAction func shareAction(_ sender: Any) {
+        presentSharesheet()
+     
+    }
+    
+    
     @IBAction func PostAnswerSegue(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "AnswerPost") as? AnswerPost
         vc?.post_id = postData.post_id
+        vc?.question = postData.post
         self.navigationController?.pushViewController(vc!, animated: true)
         
    
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        ProfileLogo.image = UIImage(named: "\(Int.random(in: 0...12))")
+        userId.text = "Posted BY \( postData.user_id ?? "")\n\n"
+        QuestionLabel.text = "\(postData.post ?? "")\n"
+        ProfileLogo.contentMode = .scaleAspectFill
+        ProfileLogo.clipsToBounds = true
+        ProfileLogo.layer.cornerRadius = 20
+        AnswerButton.layer.cornerRadius = 5
+        ShareButton.layer.cornerRadius = 5
+        ShareButton.clipsToBounds = true
+        AnswerButton.clipsToBounds = true
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        
+        
+        let url = "https://firebase-function-api.herokuapp.com/comment/?type=answer&p_commentid=\(postData.post_id ?? "")"
+        
+        fetchPostData(url: url, compi: {
+            (data) in
+            self.myanswer = data
+            DispatchQueue.main.async {
+                if self.myanswer?.count != 0 {
+                    self.AnswerList.text =  "Number of answers = \(self.myanswer?.count)"
+                }else{
+                    self.AnswerList.text = "Be the first one to answer"
+                }
+                
+               self.tableView.reloadData()
+
+            }
+
+        })
+        
+       
+    }
+   
     /*
     // MARK: - Navigation
 
