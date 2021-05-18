@@ -18,7 +18,7 @@ class HomeView: UIViewController , UITabBarDelegate, UITableViewDataSource, UITa
     var postsData : [MyPost]? = []
     var url : String = ""
     let cellSpacingheight : CGFloat = 4
-    
+    var Dump: String = "Time out Check Internet"
     let segmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: ["General","Development","Finance"])
         sc.selectedSegmentIndex = 0
@@ -124,6 +124,12 @@ class HomeView: UIViewController , UITabBarDelegate, UITableViewDataSource, UITa
         let url1 = URL(string: url)!
         let task = URLSession.shared.dataTask(with: url1){
             (data,response,error) in
+            if error != nil{
+//                self.Dump = "\(error)"
+                DispatchQueue.main.async { [self] in
+                    showAlert()
+                }
+            }
             guard let data = data else {return }
             do {
                 let postsData = try JSONDecoder().decode([MyPost].self, from: data)
@@ -140,6 +146,13 @@ class HomeView: UIViewController , UITabBarDelegate, UITableViewDataSource, UITa
         }.resume()
         
         
+    }
+    func showAlert() {
+        let alert = UIAlertController(title: "Error", message: "\(Dump)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "0K", style: .default, handler: { action in
+//           self.navigationController?.popViewController(animated: true)
+        }))
+        present(alert, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

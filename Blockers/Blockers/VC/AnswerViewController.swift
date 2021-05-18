@@ -108,7 +108,7 @@ class AnswerViewController: UIViewController , UITabBarDelegate, UITableViewData
     }
     
     @objc private func presentSharesheet(){
-        guard  let image = UIImage(systemName: "bell"),let url = URL(string: "https://google.com") else {
+        guard  let image = UIImage(named: "First"),let url = URL(string: "https://github.com/ROHITH-Singh/Blockers") else {
             return
         }
         let sharesheetVc = UIActivityViewController(activityItems: [image,url], applicationActivities: nil)

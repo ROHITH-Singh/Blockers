@@ -12,6 +12,7 @@
 		F911F5AD2608FB3A0053B0E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F911F5AC2608FB3A0053B0E6 /* ViewController.swift */; };
 		F911F5B02608FB3A0053B0E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F911F5AE2608FB3A0053B0E6 /* Main.storyboard */; };
 		F911F5B22608FB450053B0E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F911F5B12608FB450053B0E6 /* Assets.xcassets */; };
+		F93A26C52654525300A49F00 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93A26C42654525300A49F00 /* PostViewController.swift */; };
 		F96167C02651B43D00E76045 /* ImgResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167BF2651B43D00E76045 /* ImgResize.swift */; };
 		F96167C62652C67C00E76045 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C52652C67C00E76045 /* AnswerViewController.swift */; };
 		F96167CA2652E9FD00E76045 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C92652E9FD00E76045 /* AnswerModel.swift */; };
@@ -31,6 +32,7 @@
 		F911F5AF2608FB3A0053B0E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F911F5B12608FB450053B0E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F911F5B62608FB450053B0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93A26C42654525300A49F00 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		F96167BF2651B43D00E76045 /* ImgResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgResize.swift; sourceTree = "<group>"; };
 		F96167C52652C67C00E76045 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		F96167C92652E9FD00E76045 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */,
 				F96167C52652C67C00E76045 /* AnswerViewController.swift */,
 				F96167D02653201C00E76045 /* AnswerPost.swift */,
+				F93A26C42654525300A49F00 /* PostViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F93A26C52654525300A49F00 /* PostViewController.swift in Sources */,
 				F911F5AD2608FB3A0053B0E6 /* ViewController.swift in Sources */,
 				F96167C02651B43D00E76045 /* ImgResize.swift in Sources */,
 				F9D1CA7F264E5F3D00E01DEC /* HomeView.swift in Sources */,

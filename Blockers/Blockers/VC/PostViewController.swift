@@ -1,30 +1,35 @@
 //
-//  AnswerPost.swift
+//  PostViewController.swift
 //  Blockers
 //
-//  Created by Rohit on 17/05/21.
+//  Created by Rohit on 18/05/21.
 //
 
 import UIKit
 
-class AnswerPost: UIViewController {
+class PostViewController: UIViewController {
+
+  
     
-    @IBOutlet weak var AnswertextFeild: UITextView!
+    @IBOutlet weak var QuestionTextFeild: UITextView!
+//    @IBOutlet weak var Cancel: UIButton!
     
     @IBOutlet weak var Cancel: UIButton!
-    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    //    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var Done: UIButton!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var Done: UIButton!
-    @IBOutlet weak var QuestionLabel: UILabel!
+   
     var Status : Int = 0
-    var post_id: String = ""
-    var question: String = ""
+    var type : String = "general"
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        QuestionLabel.text = "\(question)"
-        print(post_id)
+       
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow(with:)),
@@ -32,7 +37,7 @@ class AnswerPost: UIViewController {
             object: nil
         )
 
-        
+        segmentedControl.addTarget(self, action: #selector(handleSegmentedChange), for: .valueChanged)
      
 
      
@@ -40,17 +45,17 @@ class AnswerPost: UIViewController {
     
     
     @IBAction func done(_ sender: Any) {
-        var answer = AnswertextFeild.text
+        var question = QuestionTextFeild.text
         
         
         // Do any additional setup after loading the view.
         
-         let json: [String: Any] = ["user_id": "10","comment":"\(answer ?? "")","post_id":"\(post_id)"]
+        let json: [String: Any] = ["post": "\(question ?? "")","type": "\(type)","user_id":"10"]
 
                  let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
                  // create post request
-                 let url = URL(string: "https://firebase-function-api.herokuapp.com/comment/?type=answer")! //PUT Your URL
+                 let url = URL(string: "https://firebase-function-api.herokuapp.com/post/")! //PUT Your URL
                  var request = URLRequest(url: url)
                  request.httpMethod = "POST"
                  request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
@@ -98,8 +103,9 @@ class AnswerPost: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        
+//        let vc = storyboard?.instantiateViewController(identifier: "HomeView") as? HomeView
+//       self.navigationController?.pushViewController(vc!, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func keyboardWillShow(with notification: Notification) {
@@ -121,25 +127,61 @@ class AnswerPost: UIViewController {
  func showAlert() {
      let alert = UIAlertController(title: "\(Status)", message: "Pew PEw \n Posted ", preferredStyle: .alert)
      alert.addAction(UIAlertAction(title: "0K", style: .default, handler: { action in
-        self.navigationController?.popViewController(animated: true)
+        self.QuestionTextFeild.text.removeAll()
+        let vc = self.storyboard?.instantiateViewController(identifier: "HomeView") as? HomeView
+       self.navigationController?.pushViewController(vc!, animated: true)
+        
      }))
      present(alert, animated: true)
  }
     
     fileprivate func dismissAndResign() {
         dismiss(animated: true)
-        AnswertextFeild.resignFirstResponder()
+        QuestionTextFeild.resignFirstResponder()
     }
+    @objc fileprivate func handleSegmentedChange() {
+           print(segmentedControl.selectedSegmentIndex)
+           
+           switch segmentedControl.selectedSegmentIndex {
+           case 0 : type = "general "
+                    print(type)
+               
+           case 1:
+                  type = "developments"
+                   print(type)
+              
+          
+        case 2: type = "finance"
+            print(type)
+            
+        default:
+            type = "general"
+            print(type)
+        }
+        
+    }
+
+
+
+
+    
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+extension PostViewController: UITextViewDelegate {
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if Done.isHidden {
+            QuestionTextFeild.text.removeAll()
+            QuestionTextFeild.textColor = .white
+
+            Done.isHidden = false
+
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+}
+
+
+
