@@ -24,20 +24,36 @@ class PostViewController: UIViewController {
    
     var Status : Int = 0
     var type : String = "general"
-   
+    var user_id:String = ""
+    var login:String = ""
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow(with:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        user_id = "\(UserDefaults.standard.string(forKey: "user_id") ?? "")"
+        login = "\(UserDefaults.standard.string(forKey: "login") ?? nil)"
+        print(user_id)
+        print(login)
+        if user_id == "" {
+          
+            showAlert1()
+              
+            }
+           
+            
+        
+        else {
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(keyboardWillShow(with:)),
+                name: UIResponder.keyboardWillShowNotification,
+                object: nil
+            )
 
-        segmentedControl.addTarget(self, action: #selector(handleSegmentedChange), for: .valueChanged)
+            segmentedControl.addTarget(self, action: #selector(handleSegmentedChange), for: .valueChanged)
+            
+        }
+       
+        
      
 
      
@@ -50,7 +66,7 @@ class PostViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        let json: [String: Any] = ["post": "\(question ?? "")","type": "\(type)","user_id":"10"]
+        let json: [String: Any] = ["post": "\(question ?? "")","type": "\(type)","user_id":"\(user_id)"]
 
                  let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
@@ -134,7 +150,17 @@ class PostViewController: UIViewController {
      }))
      present(alert, animated: true)
  }
-    
+    func showAlert1() {
+        let alert = UIAlertController(title: "Login/Signup", message: "Pew PEw Login and signUP", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "0K", style: .default, handler: { action in
+           self.QuestionTextFeild.text.removeAll()
+           let vc = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+          self.navigationController?.pushViewController(vc!, animated: true)
+           
+        }))
+        present(alert, animated: true)
+    }
+      
     fileprivate func dismissAndResign() {
         dismiss(animated: true)
         QuestionTextFeild.resignFirstResponder()

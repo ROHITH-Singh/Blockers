@@ -19,18 +19,31 @@ class AnswerPost: UIViewController {
     var Status : Int = 0
     var post_id: String = ""
     var question: String = ""
-    
+    var user_id: String = ""
+    var login: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        QuestionLabel.text = "\(question)"
-        print(post_id)
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow(with:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
+        user_id = "\(UserDefaults.standard.string(forKey: "user_id") ?? "")"
+        login = "\(UserDefaults.standard.string(forKey: "login") ?? nil)"
+        print(user_id)
+        print(login)
+        if user_id == "" {
+          
+            showAlert1()
+              
+            }
+        else{
+            QuestionLabel.text = "\(question)"
+            print(post_id)
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(keyboardWillShow(with:)),
+                name: UIResponder.keyboardWillShowNotification,
+                object: nil
+            )
+        }
+        
 
         
      
@@ -125,6 +138,17 @@ class AnswerPost: UIViewController {
      }))
      present(alert, animated: true)
  }
+    func showAlert1() {
+        let alert = UIAlertController(title: "Login/Signup", message: "Pew PEw Login and signUP", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "0K", style: .default, handler: { action in
+            self.AnswertextFeild.text.removeAll()
+           let vc = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+          self.navigationController?.pushViewController(vc!, animated: true)
+           
+        }))
+        present(alert, animated: true)
+    }
+      
     
     fileprivate func dismissAndResign() {
         dismiss(animated: true)
