@@ -22,8 +22,8 @@ class AnswerPost: UIViewController {
     var user_id: String = ""
     var login: String = ""
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         user_id = "\(UserDefaults.standard.string(forKey: "user_id") ?? "")"
         login = "\(UserDefaults.standard.string(forKey: "login") ?? nil)"
         print(user_id)
@@ -58,7 +58,7 @@ class AnswerPost: UIViewController {
         
         // Do any additional setup after loading the view.
         
-         let json: [String: Any] = ["user_id": "10","comment":"\(answer ?? "")","post_id":"\(post_id)"]
+         let json: [String: Any] = ["user_id": "\(user_id)","comment":"\(answer ?? "")","post_id":"\(post_id)"]
 
                  let jsonData = try? JSONSerialization.data(withJSONObject: json)
 

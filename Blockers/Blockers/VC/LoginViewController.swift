@@ -26,6 +26,11 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func ForgotPassword(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "ResetViewController") as? ResetViewController
+      self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
     @IBAction func LoginTaped(_ sender: Any) {
         if email != nil && password != nil {
             print(email)
@@ -49,17 +54,18 @@ class LoginViewController: UIViewController {
                   if let JSON1 = response.result.value {
                     print("JSON: \(JSON1)")
                     let data = JSON(JSON1)
-                    if data["user"] != nil {
+                    if data["message"] == "true"{
                         print(data["user"]["user_id"])
                         self.defaults.set("\(data["user"]["user_id"])",forKey: "user_id")
                         self.defaults.set("\(data["user"]["name"])",forKey: "name")
                         self.defaults.set("\(data["user"]["email"])",forKey: "email")
                         self.defaults.set(true,forKey: "login")
-                                   let vc = self.storyboard?.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
-                                 self.navigationController?.pushViewController(vc!, animated: true)
+//                                   let vc = self.storyboard?.instantiateViewController(identifier: "profile") as? profile
+//                                 self.navigationController?.pushViewController(vc!, animated: true)
+                        self.navigationController?.popViewController(animated: true)
                     }
                     
-                   else if data["message"] != true {
+                   else if data["message"] != "true" {
                         self.FType = "\(data["type"])"
                         self.showAlert()
                         

@@ -72,7 +72,8 @@ class AnswerViewController: UIViewController , UITabBarDelegate, UITableViewData
             self.myanswer = data
             DispatchQueue.main.async {
                 if self.myanswer?.count != 0 {
-                    self.AnswerList.text =  "Number of answers = \(self.myanswer?.count)"
+                    let x = self.myanswer?.count
+                    self.AnswerList.text =  "Number of answers = \(x ?? 0)"
                 }else{
                     self.AnswerList.text = "Be the first one to answer"
                 }
