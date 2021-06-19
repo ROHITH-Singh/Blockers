@@ -98,17 +98,18 @@
             </objects>
             <point key="canvasLocation" x="1899" y="67"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed-->
         <scene sceneID="iS1-ec-g2C">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="JeG-Ue-P0t" sceneMemberID="viewController">
+                <viewController title="Feed" modalPresentationStyle="fullScreen" id="JeG-Ue-P0t" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zyd-xr-9Ie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="HC1-Qi-Dlu"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemPinkColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jCy-3D-MAn"/>
+                    <navigationItem key="navigationItem" title="Feed" id="jCy-3D-MAn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P7-Er-3cN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,10 +119,20 @@
         <scene sceneID="Ypc-Ve-dyB">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="bU5-68-Qm1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="U0z-rh-umn"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="U0z-rh-umn">
+                        <imageReference key="image" image="radiowaves.right" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="radiowaves.right" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rwz-ic-RT8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="-500" vertical="0.0"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="-500" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="JeG-Ue-P0t" kind="relationship" relationship="rootViewController" id="wTz-j8-ZoR"/>
@@ -162,7 +173,10 @@
         <scene sceneID="gbI-4f-Btp">
             <objects>
                 <navigationController storyboardIdentifier="profile" modalPresentationStyle="fullScreen" id="77L-M0-B4t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="profile" image="person" catalog="system" selectedImage="person" id="ll1-3F-tzT"/>
+                    <tabBarItem key="tabBarItem" title="profile" id="ll1-3F-tzT">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="person" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IRw-hc-koV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1070,11 +1084,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="32" height="32"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="logo2" width="1600" height="1400"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="profileIcon" width="780" height="833"/>
+        <image name="radiowaves.right" catalog="system" width="84" height="128"/>
         <namedColor name="tc">
             <color red="0.37700000405311584" green="0.043999999761581421" blue="0.0010000000474974513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1087,8 +1102,8 @@
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
