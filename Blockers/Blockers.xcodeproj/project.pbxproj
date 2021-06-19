@@ -47,7 +47,7 @@
 		F96167D02653201C00E76045 /* AnswerPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPost.swift; sourceTree = "<group>"; };
 		F965B4E42659050F00EC0709 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F965B4E72659085100EC0709 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F966536B2677D56B000740D3 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Blockers/SignupViewController.swift; sourceTree = SOURCE_ROOT; };
+		F966536B2677D56B000740D3 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Blockers/VC/profile/SignupViewController.swift; sourceTree = SOURCE_ROOT; };
 		F966536E2677FCE0000740D3 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		F9785D05265047BC00ECDD17 /* Uiview+autoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uiview+autoLayout.swift"; sourceTree = "<group>"; };
 		F9785D09265064D000ECDD17 /* GetPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostModel.swift; sourceTree = "<group>"; };
@@ -122,6 +122,35 @@
 			path = Blockers;
 			sourceTree = "<group>";
 		};
+		F95E6DA6267E5AA800A304CC /* home */ = {
+			isa = PBXGroup;
+			children = (
+				F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */,
+				F96167C52652C67C00E76045 /* AnswerViewController.swift */,
+				F96167D02653201C00E76045 /* AnswerPost.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		F95E6DA7267E5AD600A304CC /* post */ = {
+			isa = PBXGroup;
+			children = (
+				F93A26C42654525300A49F00 /* PostViewController.swift */,
+			);
+			path = post;
+			sourceTree = "<group>";
+		};
+		F95E6DA9267E5AEC00A304CC /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				F966536B2677D56B000740D3 /* SignupViewController.swift */,
+				F966536E2677FCE0000740D3 /* ResetViewController.swift */,
+				F965B4E72659085100EC0709 /* LoginViewController.swift */,
+				F965B4E42659050F00EC0709 /* ProfileViewController.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
 		F9785D08265064AD00ECDD17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,14 +163,9 @@
 		F9D1CA6E264E5BDC00E01DEC /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				F9D1CA7D264E5F3D00E01DEC /* HomeView.swift */,
-				F96167C52652C67C00E76045 /* AnswerViewController.swift */,
-				F96167D02653201C00E76045 /* AnswerPost.swift */,
-				F93A26C42654525300A49F00 /* PostViewController.swift */,
-				F965B4E42659050F00EC0709 /* ProfileViewController.swift */,
-				F965B4E72659085100EC0709 /* LoginViewController.swift */,
-				F966536B2677D56B000740D3 /* SignupViewController.swift */,
-				F966536E2677FCE0000740D3 /* ResetViewController.swift */,
+				F95E6DA9267E5AEC00A304CC /* profile */,
+				F95E6DA7267E5AD600A304CC /* post */,
+				F95E6DA6267E5AA800A304CC /* home */,
 			);
 			path = VC;
 			sourceTree = "<group>";
