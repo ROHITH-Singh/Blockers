@@ -14,6 +14,9 @@
 		F911F5B02608FB3A0053B0E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F911F5AE2608FB3A0053B0E6 /* Main.storyboard */; };
 		F911F5B22608FB450053B0E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F911F5B12608FB450053B0E6 /* Assets.xcassets */; };
 		F93A26C52654525300A49F00 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93A26C42654525300A49F00 /* PostViewController.swift */; };
+		F95E6DAF267E5DBD00A304CC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E6DAE267E5DBD00A304CC /* FeedViewController.swift */; };
+		F95E6DB2267E6DA500A304CC /* FeedApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E6DB1267E6DA500A304CC /* FeedApiCaller.swift */; };
+		F95E6DB5267E76A600A304CC /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E6DB4267E76A600A304CC /* FeedTableViewCell.swift */; };
 		F96167C02651B43D00E76045 /* ImgResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167BF2651B43D00E76045 /* ImgResize.swift */; };
 		F96167C62652C67C00E76045 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C52652C67C00E76045 /* AnswerViewController.swift */; };
 		F96167CA2652E9FD00E76045 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96167C92652E9FD00E76045 /* AnswerModel.swift */; };
@@ -41,6 +44,9 @@
 		F911F5B12608FB450053B0E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F911F5B62608FB450053B0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F93A26C42654525300A49F00 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		F95E6DAE267E5DBD00A304CC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F95E6DB1267E6DA500A304CC /* FeedApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApiCaller.swift; sourceTree = "<group>"; };
+		F95E6DB4267E76A600A304CC /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		F96167BF2651B43D00E76045 /* ImgResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgResize.swift; sourceTree = "<group>"; };
 		F96167C52652C67C00E76045 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		F96167C92652E9FD00E76045 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
@@ -151,6 +157,16 @@
 			path = profile;
 			sourceTree = "<group>";
 		};
+		F95E6DAD267E5D9800A304CC /* feed */ = {
+			isa = PBXGroup;
+			children = (
+				F95E6DAE267E5DBD00A304CC /* FeedViewController.swift */,
+				F95E6DB1267E6DA500A304CC /* FeedApiCaller.swift */,
+				F95E6DB4267E76A600A304CC /* FeedTableViewCell.swift */,
+			);
+			path = feed;
+			sourceTree = "<group>";
+		};
 		F9785D08265064AD00ECDD17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +179,7 @@
 		F9D1CA6E264E5BDC00E01DEC /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				F95E6DAD267E5D9800A304CC /* feed */,
 				F95E6DA9267E5AEC00A304CC /* profile */,
 				F95E6DA7267E5AD600A304CC /* post */,
 				F95E6DA6267E5AA800A304CC /* home */,
@@ -286,6 +303,7 @@
 			files = (
 				F965B4E82659085100EC0709 /* LoginViewController.swift in Sources */,
 				F93A26C52654525300A49F00 /* PostViewController.swift in Sources */,
+				F95E6DB5267E76A600A304CC /* FeedTableViewCell.swift in Sources */,
 				F911F5AD2608FB3A0053B0E6 /* ViewController.swift in Sources */,
 				F96167C02651B43D00E76045 /* ImgResize.swift in Sources */,
 				F9D1CA7F264E5F3D00E01DEC /* HomeView.swift in Sources */,
@@ -293,9 +311,11 @@
 				F966536F2677FCE0000740D3 /* ResetViewController.swift in Sources */,
 				F9785D0A265064D000ECDD17 /* GetPostModel.swift in Sources */,
 				F96167CA2652E9FD00E76045 /* AnswerModel.swift in Sources */,
+				F95E6DAF267E5DBD00A304CC /* FeedViewController.swift in Sources */,
 				F911F5A92608FB3A0053B0E6 /* AppDelegate.swift in Sources */,
 				F96167D12653201C00E76045 /* AnswerPost.swift in Sources */,
 				F9F26D672650A58B000D5A17 /* MyCell.swift in Sources */,
+				F95E6DB2267E6DA500A304CC /* FeedApiCaller.swift in Sources */,
 				F965B4E52659050F00EC0709 /* ProfileViewController.swift in Sources */,
 				F966536C2677D56B000740D3 /* SignupViewController.swift in Sources */,
 				F9785D06265047BC00ECDD17 /* Uiview+autoLayout.swift in Sources */,

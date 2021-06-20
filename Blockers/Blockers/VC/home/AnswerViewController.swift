@@ -25,7 +25,8 @@ class AnswerViewController: UIViewController , UITabBarDelegate, UITableViewData
                cell.detailTextLabel?.numberOfLines = 0
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 8
-        cell.backgroundColor = .white
+        cell.backgroundColor = .systemBackground
+    
         cell.selectionStyle = .none
 
         return cell
