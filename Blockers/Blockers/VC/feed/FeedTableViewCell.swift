@@ -99,9 +99,11 @@ class FeedTableViewCell: UITableViewCell {
                 guard let data = data ,error == nil else {
                     return
                 }
-                viewModel.ImageData = data
+               
                 DispatchQueue.main.async {
-                    self?.imageView?.image = UIImage(data: data)
+                    viewModel.ImageData = data
+                    
+                    self?.imageView?.alpha = 0.6
                     
                 }
             }.resume()
