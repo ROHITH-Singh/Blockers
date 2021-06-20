@@ -28,16 +28,18 @@ class FeedTableViewModel{
 
 class FeedTableViewCell: UITableViewCell {
     static let identifier = "FeedCell"
-    
+    let view = UIView()
     private let FeedTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 3
+        label.textColor = .white
         label.font = .systemFont(ofSize: 25 ,   weight: .medium)
         return label
     }()
     private let FeedSubTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15 ,   weight: .medium)
+        label.textColor = .white
         label.numberOfLines = 2
         return label
     }()
@@ -45,16 +47,26 @@ class FeedTableViewCell: UITableViewCell {
     private let FeedImadeView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .secondarySystemBackground
+        imageView.backgroundColor = #colorLiteral(red: 0.3474453835, green: 0.2391514543, blue: 0.1604769072, alpha: 1)
         imageView.contentMode = .scaleAspectFill
-        imageView.alpha = 0.5
+        imageView.alpha = 0.9
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
+        
+        
         return imageView
     }()
     
     
     override init(style: UITableViewCell.CellStyle,reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+     
+        view.clipsToBounds = true
+        view.backgroundColor = #colorLiteral(red: 0.3176470697, green: 0.07450980693, blue: 0.02745098062, alpha: 1)
+        view.layer.cornerRadius = 20
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMinYCorner]
         
+        contentView.addSubview(view)
         
         contentView.addSubview(FeedImadeView)
         contentView.addSubview(FeedTitleLabel)
@@ -66,7 +78,9 @@ class FeedTableViewCell: UITableViewCell {
     }
     
      override func layoutSubviews() {
+        
         super.layoutSubviews()
+        
         FeedTitleLabel.frame = CGRect(x: 15,
                                       y: 140,
                                       width: contentView.frame.size.width - 40 ,
@@ -101,9 +115,10 @@ class FeedTableViewCell: UITableViewCell {
                 }
                
                 DispatchQueue.main.async {
-                    viewModel.ImageData = data
                     
-                    self?.imageView?.alpha = 0.6
+//                  self?.imageView?.image = UIImage(data: data)
+                  viewModel.ImageData = data
+                    
                     
                 }
             }.resume()
@@ -116,4 +131,14 @@ class FeedTableViewCell: UITableViewCell {
     
     
 
+}
+extension UIImageView { func applyBlurEffect() {
+    let blurEffect = UIBlurEffect(style: .dark)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.frame = bounds
+    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    addSubview(blurEffectView)
+    
+}
+    
 }

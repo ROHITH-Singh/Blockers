@@ -10,14 +10,16 @@ import Foundation
 final class FeedApiCaller {
     
     static let shared = FeedApiCaller()
-    
+    let now = Date()
     struct  Constants {
-        static let  topBlockchainURl = URL(string: "https://newsapi.org/v2/everything?q=blockchain&language=en&from=2021-05-19&sortBy=publishedAt&apiKey=6c344dd4fc8047b8a8646a85d59a6869")
+       
+        static let  topBlockchainURl = URL(string: "https://newsapi.org/v2/everything?q=blockchain&language=en&sortBy=publishedAt&apiKey=6c344dd4fc8047b8a8646a85d59a6869")
     }
     private  init () {
         
     }
     public func getTopFeeds(completion: @escaping (Result<[Article],Error>) -> Void){
+        print(now)
         guard let url = Constants.topBlockchainURl else {
             return
         }
@@ -56,5 +58,5 @@ struct Article:Codable {
 }
 
 struct Source:Codable {
-    let name: String
+    let name: String?
 }
