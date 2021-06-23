@@ -5,4 +5,9 @@ this app provides an platform any user who are enthusiatic in blochchain in any 
  Alamofire 
  Swifty json
  
+ # tools used
+  database = plsql \n
+  backend (Rest api) = javascript(nodejs) 
+  backend api hosted on herroku
+  https://firebase-function-api.herokuapp.com/
  
